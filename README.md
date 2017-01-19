@@ -9,7 +9,7 @@
 - Examining task with "if-else" structure
 
 03.Vacation
--Examining task with "For"cycle
+- Examining task with "For"cycle
 
 04.SoftUni Camp
 - Examining task  with "For" cycle and "if-else" structure
