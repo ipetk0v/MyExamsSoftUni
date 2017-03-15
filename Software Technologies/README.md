@@ -1,22 +1,10 @@
 <p align="center"><a href="http://softuni.bg"><img src="http://www.nakov.com/wp-content/uploads/2014/01/Software-University-Logo-blue-horizontal.png" /></a></p>
 
- <b>Programming Basic - SoftUniExam.11.2016 </b> 
- // First Steps in Programming
+ <b>Software Technologies</b> 
 
-01.Fishland 
-- Examining task with calculations
-
-02.Pets
-- Examining task with "if-else" structure
-
-03.Vacation
-- Examining task with "For"cycle
-
-04.SoftUni Camp
-- Examining task  with "For" cycle and "if-else" structure
-
-05.Fox 
-- Examining task drawing figure with Loops
-
-06.Battles
-- Examining task with Advanced Loops
+<p>The course "Software Technologies" provides basic knowledge on the most used software technologies in practice and allows students to orient themselves which technologies they like to study them in greater depth. Students learn the basic concepts of front-end and back-end development. The course consists of four parts: HTML5 development (HTML + CSS + JavaScript + AJAX + REST), PHP web development (PHP + MySQL), C # web development (ASP.NET MVC + Entity Framework + SQL Server) and Java web development ( java + Spring MVC + Hibernate + MySQL).
+The methodology of training is very practical. Study material is presented with some theory, with numerous examples and a huge amount of practical tasks of increasing difficulty and upgrading to one another, with detailed step instructions. Practical work in the classroom under the supervision of teachers and assistants (or home for online students) is over 70%. The course meets only studied technology and gives very basic skills without going deep. The goal is not learning the covered technology and familiarization with them.
+In the first few topics students are introduced to the HTML5 platform. Through many practical exercises to learn the basics of the language to describe web HTML content in combination with styling language web content languages ​​CSS and JavaScript, which build dynamic web client applications running in the web browser (front-end development). Students learn the basic elements of language JavaScript - his syntax, range of variables, conditional statements, loops, arrays, objects, functions and use them access to elements in the page DOM. Continue with the practical use of AJAX technology for extracting data from REST services and access to BaaS service to store data in cloud environments (Kinvey). To connect all studied to date, as a practical project students build a simple blog system based on HTML5, AJAX and REST service.
+In the next several topics students are familiar with PHP and MySQL. After installation and configuration of the operating environment for PHP (XAMPP or LAMP), they learn the language, its syntax, conditional statements, loops, arrays, functions. Continue with a short introduction to the HTTP protocol and process GET and POST requests with PHP. It very short introduction to relational databases and MySQL through examples and practical exercises. Study is the definition of tables and relations between them, writing very simple SQL queries and access to MySQL from PHP - retrieve, add, change and delete rows. To connect all studied in the past few topics, practical design students build a simple blog system based on PHP and MySQL.
+After passing through these topics, students become familiar with C # Web development. It starts with a practical knowledge of MS SQL Server and technology Entity Framework data access from C # applications. Following are the technologies for building Web server applications ASP.NET MVC - views, controllers, models, shapes, data access, user registration and login (login). It should develop a practical project - a simple blog system based on ASP.NET MVC, Entity Framework and SQL Server.
+In the last several topics students are introduced to Java Web development. It begins with a brief introduction to the language Java - syntax, variables, conditional statements, loops, arrays, lists, classes and objects. It familiarity with Hibernate ORM and access to a MySQL database from Java. Continue with Java Web applications (Servlets / JSP) technology and web development for Java Spring MVC. It should develop a practical project - a simple blog system based on Java, Spring MVC, Hibernate and MySQL.</p>
