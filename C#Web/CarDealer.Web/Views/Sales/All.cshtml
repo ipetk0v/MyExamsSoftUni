@@ -1,0 +1,30 @@
+﻿@model IEnumerable<SaleListModel>
+@{
+    ViewData["Title"] = "All Sales";
+}
+
+<h2></h2>
+
+<table class="table tab-content table-hover">
+    <thead>
+            <tr>
+                <th>Customer Name</th>
+                <th>Discount</th>
+                <th>Price</th>
+                <th>Discounted Price</th>
+                <th></th>
+            </tr>
+    </thead>
+    <tbody>
+        @foreach (var sale in Model)
+        {
+            <tr>
+                <td>@sale.CustomerName</td>
+                <td>@sale.Discount</td>
+                <td>@sale.Price</td>
+                <td>@sale.DiscountedPrice</td>
+                <td><a class="btn btn-sm btn-default" href="/sales/@sale.Id">More Details</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

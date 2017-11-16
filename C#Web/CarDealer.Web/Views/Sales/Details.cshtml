@@ -1,0 +1,31 @@
+﻿@model SaleDetailsModel
+@{
+    ViewData["Title"] = "Details Sales";
+}
+
+<h2></h2>
+
+<table class="table tab-content table-hover">
+    <thead>
+        <tr>
+            <th>Customer Name</th>
+            <th>Discount</th>
+            <th>Price</th>
+            <th>Discounted Price</th>
+            <th>Car Make</th>
+            <th>Car Model</th>
+            <th>Car Travel Distance</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.CustomerName</td>
+            <td>@Model.Discount</td>
+            <td>@Model.Price</td>
+            <td>@Model.DiscountedPrice</td>
+            <td>@Model.Car.Make</td>
+            <td>@Model.Car.Model</td>
+            <td>@Model.Car.TraveledDistance</td>
+        </tr>
+    </tbody>
+</table>

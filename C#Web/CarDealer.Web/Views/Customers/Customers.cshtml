@@ -1,0 +1,31 @@
+﻿@model SalesByCustomerModel
+
+@{
+    ViewData["Title"] = $"Customer {Model.Name}";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Bought cars count</th>
+            <th>Total spent money</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Model.Name
+            </td>
+            <td>
+                @Model.TotalBoughtCars
+            </td>
+            <td>
+                @Model.TotalMoneySpent
+            </td>
+        </tr>
+    </tbody>
+</table>
+

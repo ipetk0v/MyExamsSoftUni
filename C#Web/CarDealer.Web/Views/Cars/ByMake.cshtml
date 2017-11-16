@@ -1,0 +1,27 @@
+﻿@model CarsByMakeModel
+
+@{
+    ViewData["Title"] = $"{Model.Make} Cars";
+}
+
+<h2>@Model.Make Cars</h2>
+
+<table class="table table-bordered table-hover" style="text-align:center">
+    <thead style="font-weight: bold; font-size: 18px">
+        <tr>
+            <td>Make</td>
+            <td>Model</td>
+            <td>Travelled Distance</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model.Cars)
+        {
+            <tr>
+                <td>@car.Make</td>
+                <td>@car.Model</td>
+                <td>@(car.TraveledDistance / 1000) KM</td>
+            </tr>
+        }
+    </tbody>
+</table>
