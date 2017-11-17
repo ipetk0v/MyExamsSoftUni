@@ -1,12 +1,12 @@
 ﻿namespace CarDealer.Services.Implementation
 {
-    using System.Collections.Generic;
-    using CarDealer.Services.Interfaces;
-    using CarDealer.Services.Cars.Models;
     using CarDealer.Data;
-    using System.Linq;
+    using CarDealer.Services.Cars.Models;
+    using CarDealer.Services.Interfaces;
     using CarDealer.Services.Models.Cars;
-    using CarDealer.Services.Models;
+    using CarDealer.Services.Models.Parts;
+    using System.Collections.Generic;
+    using System.Linq;
 
     public class CarServices : ICarServices
     {

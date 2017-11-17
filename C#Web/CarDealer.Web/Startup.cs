@@ -34,6 +34,7 @@
             services.AddTransient<ICarServices, CarServices>();
             services.AddTransient<ISupplierServices, SupplierServices>();
             services.AddTransient<ISalesServices, SalesServices>();
+            services.AddTransient<IPartSurvices, PartSurvices>();
 
             services.AddMvc();
         }

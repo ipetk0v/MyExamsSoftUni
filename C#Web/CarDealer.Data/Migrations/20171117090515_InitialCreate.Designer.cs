@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 
-namespace CarDealer.Web.Data.Migrations
+namespace CarDealer.Data.Migrations
 {
     [DbContext(typeof(CarDealerDbContext))]
-    [Migration("20171104182546_InitialTable")]
-    partial class InitialTable
+    [Migration("20171117090515_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,11 +48,11 @@ namespace CarDealer.Web.Data.Migrations
 
                     b.Property<DateTime>("BirthDate");
 
+                    b.Property<bool>("IsYoungDriver");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100);
-
-                    b.Property<bool>("isYoungDriver");
 
                     b.HasKey("Id");
 

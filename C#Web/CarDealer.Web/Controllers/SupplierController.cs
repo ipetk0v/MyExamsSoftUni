@@ -23,7 +23,7 @@
         {
             var type = impoters ? "Importer" : "Local";
 
-            var supplier = this.supplier.All(impoters);
+            var supplier = this.supplier.AllListings(impoters);
 
             return new SupplierModels
             {

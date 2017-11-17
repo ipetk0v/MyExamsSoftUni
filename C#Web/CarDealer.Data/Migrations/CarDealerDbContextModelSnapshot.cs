@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 
-namespace CarDealer.Web.Data.Migrations
+namespace CarDealer.Data.Migrations
 {
     [DbContext(typeof(CarDealerDbContext))]
     partial class CarDealerDbContextModelSnapshot : ModelSnapshot
@@ -47,11 +47,11 @@ namespace CarDealer.Web.Data.Migrations
 
                     b.Property<DateTime>("BirthDate");
 
+                    b.Property<bool>("IsYoungDriver");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100);
-
-                    b.Property<bool>("isYoungDriver");
 
                     b.HasKey("Id");
 
