@@ -2,6 +2,7 @@
 using CameraBazaar.Data.Models;
 using CameraBazaar.Services;
 using CameraBazaar.Web.Infrastructures.Extensions;
+using CameraBazaar.Web.Infrastructures.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -40,7 +41,10 @@ namespace CameraBazaar.Web
 
             services.AddTransient<ICameraService, CameraService>();
 
-            services.AddMvc();
+            services.AddMvc(options =>
+             {
+                 options.Filters.Add<LogAttribute>();
+             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
