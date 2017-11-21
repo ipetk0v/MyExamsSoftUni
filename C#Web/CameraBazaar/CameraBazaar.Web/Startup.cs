@@ -39,6 +39,12 @@ namespace CameraBazaar.Web
                 .AddEntityFrameworkStores<CameraBazaarDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = "128303127860045";
+                facebookOptions.AppSecret = "7667bbd70eb71626b18bf00d43aadacf";
+            });
+
             services.AddTransient<ICameraService, CameraService>();
 
             services.AddMvc(options =>
