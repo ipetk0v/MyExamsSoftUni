@@ -1,22 +1,4 @@
 <p align="center"><a href="http://softuni.bg"><img src="http://www.nakov.com/wp-content/uploads/2014/01/Software-University-Logo-blue-horizontal.png" /></a></p>
 
- <b>Programming Basic - SoftUniExam.11.2016 </b> 
- // First Steps in Programming
-
-01.Fishland 
-- Examining task with calculations
-
-02.Pets
-- Examining task with "if-else" structure
-
-03.Vacation
-- Examining task with "For"cycle
-
-04.SoftUni Camp
-- Examining task  with "For" cycle and "if-else" structure
-
-05.Fox 
-- Examining task drawing figure with Loops
-
-06.Battles
-- Examining task with Advanced Loops
+Курсът "Programming Basics" дава начални умения по програмиране, необходими за всички технологични специалности в Софтуерния университет. Това включва писане на програмен код на начално ниво (basic coding skills), работа със среда за разработка (IDE), използване на променливи и данни, оператори и изрази, работа с конзолата (четене на входни данни и печатане на резултати), използване на условни конструкции (if, if-else) и цикли (for, while, do-while).
+Курсът завършва с практически изпит по програмиране, който е приемен в програмата по софтуерно инженерство на Софтуерния университет. Подробна информация за Учебния план може да намерите тук.
