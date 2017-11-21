@@ -23,12 +23,12 @@ namespace CameraBazaar.Web.Controllers
         [Authorize]
         public IActionResult Add()
             => View();
-        
+
         [Authorize]
         [HttpPost]
         public IActionResult Add(AddCameraViewModel cameraModel)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(cameraModel);
             }
@@ -40,7 +40,7 @@ namespace CameraBazaar.Web.Controllers
                 cameraModel.Quantity,
                 cameraModel.MinShutterSpeed,
                 cameraModel.MaxShutterSpeed,
-                cameraModel.MinISO, 
+                cameraModel.MinISO,
                 cameraModel.MaxISO,
                 cameraModel.IsFullFrame,
                 cameraModel.VideoResolution,
@@ -51,5 +51,13 @@ namespace CameraBazaar.Web.Controllers
 
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
+
+        [Authorize]
+        public IActionResult All()
+            => this.View(camera.All());
+
+        [Authorize]
+        public IActionResult Details(int id)
+            => this.View(camera.Details(id));
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CameraBazaar.Data.Models;
+using CameraBazaar.Services.Models;
 using System.Collections.Generic;
 
 namespace CameraBazaar.Services
@@ -21,5 +22,9 @@ namespace CameraBazaar.Services
             string imageURL,
             string userId
             );
+
+        IEnumerable<AllCamerasModel> All();
+
+        AllCamerasModel Details(int id);
     }
 }
