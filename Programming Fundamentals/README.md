@@ -1,16 +1,5 @@
 <p align="center"><a href="http://softuni.bg"><img src="http://www.nakov.com/wp-content/uploads/2014/01/Software-University-Logo-blue-horizontal.png" /></a></p>
 
-<p>The course "Programming Fundamentals" expands accumulated until basic skills for writing programming code of the course "Introduction to Programming" and introduces basic techniques and tools for practical programming beyond writing simple programming constructs.
-The course covers working with:
-<ul>
-<li>Git and GitHub</li>
-<li>Data Types and Variables</li>
-<li>Methods. Debugging and Troubleshooting Code</li>
-<li>Arrays and Lists</li>
-<li>Dictionaries, Lambda and LINQ</li>
-<li>Objects and Classes</li>
-<li>Files, Directories and Exceptions</li>
-<li>Strings, Regex</li>
-
-</ul>
-</p>
+Курсът "Programming Fundamentals" разширява натрупаните до момента начални умения за писане на програмен код от курса "Основи на програмирането" и запознава с базови техники и инструменти за практическо програмиране отвъд писането на прости програмни конструкции.
+Курсът обхваща работа с хранилища за сорс код и инструменти за екипно взаимодействие като Git и GitHub, запознаване с типовете данни в програмирането и техните особености, изваждане на парчета код в методи с параметри и връщана стойност, използване на дебъгер за проследяване изпълнението на кода и намиране на грешки, обработка на поредици елементи чрез масиви и списъци, използване на колекции, работа с матрици за обработка на таблични данни, работа с речници и асоциативни масиви за обработка и съхранение на двойки {ключ - стойност}, работа със стрингове и текстообработка и основни познания за работа с класове и обекти, използване на API класове и дефиниране на собствени класове.
+Наред с техниките за програмиране курсът развива алгоритмично мислене и изгражда умения за решаване на задачи чрез работа върху стотици практически упражнения. Всички задачи за упражнения и домашни се оценяват в реално време с автоматизираната SofUni online judge система. Курсът завършва с практически изпит по програмиране.
