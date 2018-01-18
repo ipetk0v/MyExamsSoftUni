@@ -56,3 +56,119 @@ function triangleArea(sideA,sideB,sideC) {
 // Write a JS function to calculate a cone’s volume and surface area by given height and radius at the base.
 // The input comes as two number arguments. The first element is the cone’s radius and the second is its height.
 // The output should be printed to the console on a new line for every result.
+
+function cone(r,h) {
+    let volume = Math.PI * r * r * h / 3;
+    let s = Math.sqrt(r * r + h * h);
+    let area = Math.PI * r * (r + s);
+    console.log(volume)
+    console.log(area)
+}
+
+// 7.	Odd / Even
+// Write a JS function to check if a number is odd or even or invalid (fractions are neither odd nor even).
+// The input comes as a single number argument.
+// The output should be printed to the console. Print odd for odd numbers, even for even number and invalid for numbers that contain decimal fractions.
+
+function oddOrEven(num) {
+    if (!Number.isInteger(num)) {
+        console.log("invalid")
+    } else if (Math.abs(num) % 2 === 0) {
+        console.log("even")
+    } else if (Math.abs(num) % 2 === 1){
+        console.log("odd")
+    }
+}
+
+// 8.	Fruit or Vegetable
+// Write a JS function to print "fruit", "vegetable" or "unknown" depending on the input string.
+// •	Fruits are: banana, apple, kiwi, cherry, lemon, grapes, peach
+// •	Vegetable are: tomato, cucumber, pepper, onion, garlic, parsley
+// •	All others are unknown
+// The input comes as a single string argument, the name of the fruit.
+// The output should be printed to the console.
+
+function fruitOrVegatabl(name) {
+    let fruits = ['banana', 'apple', 'kiwi', 'cherry', 'lemon', 'grapes', 'peach'] 
+    let vegetable = ['tomato', 'cucumber', 'pepper', 'onion', 'garlic', 'parsley']
+    
+    if (fruits.includes(name)) {
+        console.log("fruit")
+    } else if (vegetable.includes(name)){
+        console.log("vegetable")
+    } else {
+        console.log("unknown")
+    }
+}
+
+// 9.	Colorful Numbers
+// Write a JS function to print the numbers from 1 to n. Return a string holding HTML list with the odd lines in blue and even lines in green. See the example for more information.
+// The input comes as a single number argument n.
+// The output should be returned as a result of your function in the form of a string.
+
+function colorfulNumbers(num) {
+    console.log("<ul>")
+        for (let index = 1; index <= num; index++) {
+            if (index % 2 !== 0) {
+                console.log("<li><span style='color:green'>%d</span></li>",index)
+            } else {
+                console.log("<li><span style='color:blue'>%d</span></li>",index)
+            }            
+        }
+    console.log("</ul>")
+}
+
+// 10.	Chess Board
+// Write a JS function to print a chessboard of size n X n. See the example for more information.
+// The input comes as a single number argument n.
+// The output should be returned as a result of your function in the form of a string.
+
+function chessBoard(num) {
+    console.log("<div class=\"chessboard\">")
+    for (let outIndex = 1; outIndex <= num; outIndex++) {
+        console.log("<div>")    
+        for (let index = 1; index <= num; index++) {
+            if (index % 2 !== 0 && outIndex % 2 !== 0) {
+                console.log("<span class=\"black\"></span>")
+            } else if (index % 2 === 0 && outIndex % 2 === 0){
+                console.log("<span class=\"black\"></span>")
+            } else {
+                console.log("<span class=\"white\"></span>")
+            }     
+        }
+            console.log("</div>")    
+    }
+    console.log("</div>")
+}
+
+// 11.	Binary Logarithm
+// Write a JS function that prints the binary logarithm (log2 x) for each number in the input.
+// The input comes as an array of number elements.
+// The output should be printed to the console, on a new line for each number.
+
+function binaryLogorithm(array) {
+    array.forEach(element => {
+        console.log(Math.log2(element))
+    });
+}
+
+binaryLogorithm([1024,1048576,256,1,2,50,100])
+
+// 12.	Prime Number Checker
+// Write a JS function to check if a number is prime (only wholly divisible by itself and one).
+// The input comes as a single number argument.
+// The output should be the return value of your function. Return true for prime number and false otherwise.
+
+function primeNumberChecker(num) {
+    if (num < 2) {
+        console.log("false")
+        return
+    }
+    for(var i = 2; i < num; i++) {
+        if(num % i === 0) {
+            console.log("false")
+            return
+        }
+    }
+    console.log("true")
+}
