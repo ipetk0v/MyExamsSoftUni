@@ -167,4 +167,155 @@ function assignProperties(input) {
     console.log(obj)
 }
 
-assignProperties(['name', 'Pesho', 'age', '23', 'gender', 'male'])
+// 13.	*Last Month
+// Write a JS function that receives a date as array of strings containing day, month and year in that order. Your task is to print the last day of previous month (the month BEFORE the given date). Check the examples to better understand the problem.
+// The input comes as an array of numbers.
+// The output should be a single number representing the last day of the previous month.
+
+function lastMonth(input) {
+    let day = input[0]
+    let month = input[1] - 2
+    let year = input[2]
+    let date = new Date(year,month,day)
+    var days = [];
+     while (date.getMonth() === month) {
+        days.push(new Date(date));
+        date.setDate(date.getDate() + 1);
+     }
+     let lastIndex = days.length - 1
+     console.log(days[lastIndex].getDate())
+}
+
+// 14.	Biggest of 3 Numbers
+// Write a JS function that finds the biggest of 3 numbers.
+// The input comes as array of 3 numbers.
+// The output is the biggest from the input numbers.
+
+function biggestOfThreeNumbers(input) {
+    let num1 = Number(input[0])
+    let num2 = Number(input[1])
+    let num3 = Number(input[2])
+
+    let result = Math.max(num1,num2,num3)
+    console.log(result)
+}
+
+// 15.	Point in Rectangle
+// Write a JS function that takes as input 6 numbers x, y, xMin, xMax, yMin, yMax and prints whether the point {x, y} is inside the rectangle or outside of it. If the point is at the rectangle border, it is considered inside.
+// The input comes as array of numbers. Its holds the representations of x, y, xMin, xMax, yMin, yMax. All numbers will in the range [-1 000 000 … 1 000 000]. It is guaranteed that xMin < xMax and yMin < yMax.
+// The output is a single line holding “inside” or “outside”.
+
+function pointInRectangle(input) {
+    let [x, y, xMin, xMax, yMin, yMax] = input
+
+    if ((x >= xMin && x <= xMax) &&
+        (y >= yMin && y <= yMax)) {
+        console.log("inside")
+    } else {
+        console.log("outside")
+    }
+}
+
+// 16.	Odd Numbers 1 to N
+// Write a JS function that reads an integer n and prints all odd numbers from 1 to n.
+// The input comes as a single number n. The number n will be an integer in the range [1 … 100 000].
+// The output should hold the expected odd numbers, each at a separate line.
+
+function oddNumbers(num) {
+    for (let index = 1; index <= num; index++) {     
+        if (index % 2 === 1) {
+            console.log(index)
+        }   
+    }
+}
+
+// 17.	Triangle of Dollars
+// Write a JS function that prints a triangle of n lines of “$” characters like shown in the examples.
+// The input comes as a single number n (0 < n < 100).
+// The output consists of n text lines like shown below.
+
+function triangleOfDollars(num) {
+    for (let index = 1; index <= num; index++) {
+        console.log("$".repeat(index))
+    }
+}
+
+// Movie ticket prices in a big retro-cinema depend on the movie title and on the day of week as shown below: 
+// Movie Title	Monday	Tuesday	Wednesday	Thursday	Friday	Saturday	Sunday
+// The Godfather	12	10	15	12.50	15	25	30
+// Schindler's List	8.50	8.50	8.50	8.50	8.50	15	15
+// Casablanca	8	8	8	8	8	10	10
+// The Wizard of Oz	10	10	10	10	10	15	15
+// Write a JS function that calculate the ticket price by movie title and day of week.
+// The input comes as array of 2 strings. The first string holds the movie title. The second string holds the day of week.
+// The output should hold the ticket price or “error” if the title or day of week is invalid.
+
+function movieTicketPrices(input) {
+    // data
+    let theGodfather = {name: "the godfather", day: {monday: 12, tuesday: 10, wednesday: 15,thursday: 12.50,friday: 15,saturday: 25, sunday: 30}}
+    let schindlersList = {name: "schindler's list", day: {monday: 8.50, tuesday: 8.50, wednesday: 8.50,thursday: 8.50,friday: 8.50,saturday: 15, sunday: 15}}
+    let casablanca = {name: "casablanca", day: {monday: 8, tuesday: 8, wednesday: 8,thursday: 8,friday: 8,saturday: 10, sunday: 10}}
+    let theWizardOfOz = {name: "the wizard of oz", day: {monday: 10, tuesday: 10, wednesday: 10,thursday: 10,friday: 10,saturday: 15, sunday: 15}}
+
+    let listOfFilms = [theGodfather,schindlersList,casablanca,theWizardOfOz]
+    // input
+    let film = String(input[0]).toLowerCase()
+    let day = String(input[1]).toLowerCase()
+
+    // logical
+        let result = listOfFilms.find(function (obj) { return obj.name === film})
+       
+        switch (day) {
+            case "monday":
+                console.log(result.day.monday)
+                break;
+            case "tuesday":
+                console.log(result.day.tuesday)
+                break;
+            case "wednesday":
+                console.log(result.day.wednesday)
+                break;
+            case "thursday":
+                console.log(result.day.thursday)
+                break;
+            case "friday":
+                console.log(result.day.friday)
+                break;
+            case "saturday":
+                console.log(result.day.saturday)
+                break;
+            case "sunday":
+                console.log(result.day.sunday)
+                break;
+            default:
+                console.log("error")
+                break;
+        }
+}
+
+// 19.	Quadratic Equation
+// Write a JS function to solve a quadratic equation by given in standard form as its coefficients: a, b, c. You may learn more about quadratic equations here: https://www.mathsisfun.com/algebra/quadratic-equation.html.
+// The input comes as 3 numbers a, b and c. The value of a will be non-zero.
+// The output depends on the equation:
+// •	It holds two numbers x1 and x2 if the equation has two different solutions (roots): x1 and x2.
+// o	First print the smaller root, then the greater.
+// •	It holds a single number x if the equation has only one solution (root): x.
+// •	It holds the text “No” if the equation has no solutions (no real roots).
+
+function quandraticEquation(a,b,c) {
+    let result = (-1 * b + Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
+    let result2 = (-1 * b - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
+    if (result === result2 ) {
+        console.log(result)
+        return
+    }
+    if (result.toString() !== "NaN" && result2.toString() !== "NaN") {
+        console.log(result2)
+        console.log(result)
+    } else {
+        console.log("no")
+    }
+
+}
+
+quandraticEquation(1,-12,36)
