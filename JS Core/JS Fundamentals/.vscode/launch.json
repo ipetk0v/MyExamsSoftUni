@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/Control Flow Logic.js"
+            "program": "${workspaceFolder}/Data Types, Expressions, Statements.js"
         }
     ]
 }
