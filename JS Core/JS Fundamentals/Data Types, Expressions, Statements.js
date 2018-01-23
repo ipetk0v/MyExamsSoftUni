@@ -318,4 +318,65 @@ function quandraticEquation(a,b,c) {
 
 }
 
-quandraticEquation(1,-12,36)
+// 20.	Multiplication Table
+// Write a JS function to print a math multiplication table of size n, formatted as HTML table.
+// The input comes as a single number n (0 < n < 100).
+// The output consists of n+3 text lines like shown below.
+
+function multiplicationTable(number) {
+    number = Number(number);
+    let html = "";
+    html += '<table border="1">\n';
+    html += '\t<tr><th>x</th>';
+
+    for(let i = 1; i<= number; i++) {
+        html += `<th>${i}</th>`;
+    }
+
+    html += '</tr>\n';
+
+    for(let i=1; i <= number; i++) {
+        html += `\t<tr><th>${i}</th>`;
+
+        for(let j=1; j<= number; j++) {
+            html += `<td>${i * j}</td>`
+        }
+
+        html += '</tr>\n';
+    }
+
+    html += '</table>\n';
+
+    console.log(html);
+}
+
+// 21.	Figure of 4 Squares
+// Write a JS function to print a figure of 4 squares of size n like shown in the examples below.
+// The input is an integer number n in the range [2 … 200].
+// The output consists of n lines for odd n and n-1 lines for even n. Each line holds 2*n-1 characters (+ or | or space) as shown in the examples. The figure is fully symmetric (horizontally and vertically).
+
+function figureOf4squares(n) {
+    let r = ' ';
+    n = Number(n);
+    let space = (2 * n - 4) / 2;
+    if(n % 2 == 0) {
+        for (let i = 1; i <= 2; i++) {
+            console.log(r = '+' + '-'.repeat(space) + '+' + '-'.repeat(space) + '+');
+            for (let m = 1; m <= (n / 2) - 2; m++){
+                console.log(r = '|' + ' '.repeat(n - 2) + '|' + ' '.repeat(n - 2) + '|');
+            }
+        }
+        console.log(r = '+' + '-'.repeat(space) + '+' + '-'.repeat(space) + '+');
+    }
+    else{
+        for (let i = 1; i <= 2; i++) {
+            console.log(r = '+' + '-'.repeat(space) + '+' + '-'.repeat(space) + '+');
+            for (let m = 1; m <= (n / 2) - 1; m++){
+                console.log(r = '|' + ' '.repeat(n - 2) + '|' + ' '.repeat(n - 2) + '|');
+            }
+        }
+        console.log(r = '+' + '-'.repeat(space) + '+' + '-'.repeat(space) + '+');
+    }
+}
+
+figureOf4squares(4)
