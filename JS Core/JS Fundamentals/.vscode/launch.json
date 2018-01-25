@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/Exercises-Functions and Arrow Functions.js"
+            "program": "${workspaceFolder}/Lab-Arrays and Matrices.js"
         }
     ]
 }
