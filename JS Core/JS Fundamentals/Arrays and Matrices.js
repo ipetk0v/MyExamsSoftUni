@@ -131,7 +131,60 @@ function magicMatrices(arr) {
 // The input comes as 2 numbers that represent the dimension of the matrix. 
 // The output is the matrix filled spirally starting from 1. You need to print every row on a new line, with the cells separated by a space. Check the examples below. 
 
-
-function spiralMatrix(input) {
+function spiralMatrix(n) {
+    var total = n*n;
+    var result= [];
+ 
+    for(var i=0;i<n;i++) {
+        var rs = [];
+        for(var j=0;j<n;j++) {
+            rs.push(0);
+        }   
+        result.push(rs);
+    }
     
+    var x=0;
+    var y=0;
+    var step = 0;
+    for(var i=0;i<total;){
+        while(y+step<n){
+            i++;
+            result[x][y]=i; 
+            y++;
+ 
+        }    
+        y--;
+        x++;
+        
+        while(x+step<n){
+            i++;
+            result[x][y]=i;
+            x++;
+        }
+        x--;
+        y--;
+         
+        while(y>=step){
+            i++;
+            result[x][y]=i;
+            y--;
+        }
+        y++;
+        x--;
+        step++;
+         
+        while(x>=step){
+            i++;
+            result[x][y]=i;
+            x--;
+        }
+        x++;
+        y++;
+    }
+
+    result.forEach(element => {
+        console.log(element.join(' '))
+    })
 }
+
+spiralMatrix(5,5)
