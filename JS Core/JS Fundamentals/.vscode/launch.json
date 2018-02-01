@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/Lab-Objects and Associative Arrays.js"
+            "program": "${workspaceFolder}/Exercises-Strings and Regular Expressions.js"
         }
     ]
 }
