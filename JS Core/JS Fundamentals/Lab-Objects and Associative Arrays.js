@@ -134,4 +134,115 @@ function countWordsWithMaps(input) {
     }
 }
 
-countWordsWithMaps(["Far too slow, you\'re far too slow."])
+// 7.	Populations in Towns
+// You have been tasked to create a register for different towns and their population.
+// The input comes as array of strings. Each element will contain data for a town and its population in the following format:
+// “{townName} <-> {townPopulation}”
+// If you receive the same town twice, you should add the given population to the current one.
+// As output, you must print all the towns, and their population.
+
+function populationInTowns(input){
+    let dataTownsWithPopulation = new Map()
+    for (let element of input) {
+        let currentData = element.split(' <-> ').filter(a => a !== '')
+        let townName = currentData[0]
+        let population = Number(currentData[1])
+        if (!dataTownsWithPopulation.has(townName)) {            
+            dataTownsWithPopulation.set(townName, population)
+        } else {
+            dataTownsWithPopulation.set(townName, (dataTownsWithPopulation.get(townName) + population))
+        }
+    }
+
+    for (let town of dataTownsWithPopulation) {
+        console.log(`${town[0]} : ${town[1]}`)
+    }
+}
+
+// 8.	City Markets
+// You have been tasked to follow the sales of products in the different towns. For every town you need to keep track of all the products sold, and for every product, the amount of total income.
+// The input comes as array of strings. Each element will represent data about a product and its sales. The format of input is:
+// {town} -> {product} -> {amountOfSales} : {priceForOneUnit}
+// The town and product are both strings. The amount of sales and price for one unit will be numbers. Store all towns, for every town, store its products, and for every product, its amount of total income. The total income is calculated with the following formula - amount of sales * price for one unit. If you receive as input a town you already have, you should just add the new product to it.
+// As output you must print every town, its products and their total income in the following format:
+// “Town – {townName}
+//  $$${product1Name} : {productTotalIncome}
+//  $$${product2Name} : {productTotalIncome}
+//  ...”
+// The order of output for each of those entries is – by order of entrance.
+
+function cityMarkets(input){
+    let cityMarketsData = new Map()
+    for (let city of input) {
+        let currentData = city.split(' -> ')
+        let town = currentData[0]
+        let product = currentData[1]
+        let amountOfSales = Number(currentData[2].split(" : ")[0])
+        let priceForOneUnit = Number(currentData[2].split(" : ")[1])
+        let total = amountOfSales * priceForOneUnit
+
+        if (!cityMarketsData.has(town)) {
+            cityMarketsData.set(town, new Map())
+            cityMarketsData.get(town).set(product, total)
+        } else {
+            cityMarketsData.get(town).set(product,total)
+        }
+    }
+
+    for (let city of cityMarketsData) {
+        console.log(`Town - ${city[0]}`)
+        for (let products of city[1]) {
+            console.log(`$$$${products[0]} : ${products[1]}`)
+        }
+    }
+}
+
+// 9.	Lowest Prices in Cities
+// You will be given several towns, with products and their price. You need to find the lowest price for every product and the town it is sold at for that price.
+// The input comes as array of strings. Each element will hold data about a town, product, and its price at that town. The town and product will be strings; the price will be a number. The input will come in the following format:
+// {townName} | {productName} | {productPrice}
+// If you receive the same town and product more than once, you should update the old value with the new one.
+// As output you must print each product with its lowest price and the town at which the product is sold at that price. If two towns share the same lowest price, print the one that was entered first. 
+// The output, for every product, should be in the following format:
+// {productName} -> {productLowestPrice} ({townName})
+// The order of output is – order of entrance. See the examples for more info.
+
+function lowestPricesInCities(input) {
+    let productsData = new Map()
+    for (let productsAndCity of input) {
+        let [town,product,price] = productsAndCity.split(" | ")        
+        if (!productsData.has(product)) {
+            productsData.set(product, new Map())
+        }
+        productsData.get(product).set(town,Number(price))
+    }
+
+        for (let [key,value] of productsData) {
+            let lowest = ([...value].reduce(function(a,b){
+                if (a[1] < b[1]) {
+                    return a;
+                } else if (a[1] > b[1]) {
+                    return b;
+                }
+                return a;
+            }))
+            console.log(`${key} -> ${lowest[1]} (${lowest[0]})`)
+        }    
+}
+
+// 10.	Extract Unique Words
+// Write a JS function that extracts all UNIQUE words from a valid text, and stores them. Ensure that there are NO duplicates in the stored words. Once you find a word, there is no need for you to store it again if you meet it again in the text. You also need to make all characters from the words you’ve stored – lowercase.
+// The input comes as array of strings. Each element will represent a sentence.
+// The output is all of the unique words you’ve found, each with each, separated by a coma and a space, printed in the order in which you’ve found them. 
+
+function extractUniqueWords(input){
+    let result = new Set()
+    for (let textLine of input) {
+        let word = textLine.split(/[\s\.\,]/).filter(a => a !== '')
+        for (let wordAdd of word) {
+            result.add(wordAdd.toLowerCase())
+        }
+    }
+
+    console.log([...result.values()].join(', '))
+}
