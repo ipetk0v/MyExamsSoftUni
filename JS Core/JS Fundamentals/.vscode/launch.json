@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/JSFundamentalsExam-18June2017.js"
+            "program": "${workspaceFolder}/Exam11022018.js"
         }
     ]
 }
