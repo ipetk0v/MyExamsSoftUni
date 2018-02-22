@@ -25,46 +25,44 @@
     window.onload=function(){
         timer();
     }
+
+      function timer() {
+        let hr = $('#hours');
+        let min = $('#minutes');
+        let sec = $('#seconds');
+        let counter = 0;
+        $('#start-timer').on('click', start);
+        $('#stop-timer').on('click', function () {
+            clearInterval(counter);
+            $('#start-timer').on('click', start);
+        });
+        function start() {
+            counter = setInterval(step, 1000);
+            $('#start-timer').off('click');
+        }
     
-    function timer() {
-        let secondCounter = 0
-        let minutesCounter = 0
-        let hoursCounter = 0
-        // start timer
-        $('#start-timer').on('click', function(){
-            let seconds = `00`
-            let minutes = `00`
-            let hours = `00`
-            let timer = setInterval(function(){
-                secondCounter++
-                if(secondCounter % 60 !== 0){
-                    seconds = secondCounter < 10 ? `0${secondCounter}` : `${secondCounter}`    
-                } else {
-                    secondCounter = 0
-                    minutesCounter++
-                    if(minutesCounter % 60 !== 0){
-                        seconds = secondCounter < 10 ? `0${secondCounter}` : `${secondCounter}`
-                        minutes = minutesCounter < 10 ? `0${minutesCounter}` : `${minutesCounter}`
-                    } else {
-                        minutesCounter = 0
-                        hoursCounter++
-                        seconds = secondCounter < 10 ? `0${secondCounter}` : `${secondCounter}`
-                        minutes = minutesCounter < 10 ? `0${minutesCounter}` : `${minutesCounter}`
-                        hours = hoursCounter < 10 ? `0${hoursCounter}` : `${hoursCounter}`
-                    }
-                }
-
-                $('#seconds').text(seconds)
-                $('#minutes').text(minutes)
-                $('#hours').text(hours)
-            }, 1000)
-
-            // pause timer
-            $('#stop-timer').on('click', function(){
-                clearInterval(timer)
-            })
-        })
+        function step() {
+            sec.val(+sec.val() + 1);
+            if (sec.val() > 59) {
+                sec.val('00');
+                min.val(+min.val() + 1);
+                min.text(formatTime(min.val()));
+            }
+            if (min.val() > 59) {
+                min.val('00');
+                hr.val(+hr.val() + 1);
+                min.text(formatTime(min.val()));
+                hr.text(formatTime(hr.val()));
+            }
+            sec.text(formatTime(sec.val()));
+        }
+    
+    function formatTime(value) {
+        let partial = `${('0' + value % 60).slice(-2)}`;
+        return partial;
     }
+}
+    
 
 </script>
 </body>
