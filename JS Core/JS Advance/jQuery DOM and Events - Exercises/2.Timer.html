@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+            integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+            crossorigin="anonymous"></script>
+    <style>
+        #timer {
+            font-size: 5em;
+        }
+    </style>
+</head>
+<body>
+<div id="timer">
+    <span id="hours" class="timer">00</span>:
+    <span id="minutes" class="timer">00</span>:
+    <span id="seconds" class="timer">00</span>
+    <button id="start-timer">Start</button>
+    <button id="stop-timer">Stop</button>
+</div>
+<script src="timer.js"></script>
+<script>
+    window.onload=function(){
+        timer();
+    }
+    
+    function timer() {
+        let secondCounter = 0
+        let minutesCounter = 0
+        let hoursCounter = 0
+        // start timer
+        $('#start-timer').on('click', function(){
+            let seconds = `00`
+            let minutes = `00`
+            let hours = `00`
+            let timer = setInterval(function(){
+                secondCounter++
+                if(secondCounter % 60 !== 0){
+                    seconds = secondCounter < 10 ? `0${secondCounter}` : `${secondCounter}`    
+                } else {
+                    secondCounter = 0
+                    minutesCounter++
+                    if(minutesCounter % 60 !== 0){
+                        seconds = secondCounter < 10 ? `0${secondCounter}` : `${secondCounter}`
+                        minutes = minutesCounter < 10 ? `0${minutesCounter}` : `${minutesCounter}`
+                    } else {
+                        minutesCounter = 0
+                        hoursCounter++
+                        seconds = secondCounter < 10 ? `0${secondCounter}` : `${secondCounter}`
+                        minutes = minutesCounter < 10 ? `0${minutesCounter}` : `${minutesCounter}`
+                        hours = hoursCounter < 10 ? `0${hoursCounter}` : `${hoursCounter}`
+                    }
+                }
+
+                $('#seconds').text(seconds)
+                $('#minutes').text(minutes)
+                $('#hours').text(hours)
+            }, 1000)
+
+            // pause timer
+            $('#stop-timer').on('click', function(){
+                clearInterval(timer)
+            })
+        })
+    }
+
+</script>
+</body>
+</html>
