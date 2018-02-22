@@ -1,3 +1,8 @@
 function validate() {
-    // TODO
+    $("#userInfo").validate({
+        username: {
+            minlength: 3,
+            maxLength: 20
+        }
+    });
 }
