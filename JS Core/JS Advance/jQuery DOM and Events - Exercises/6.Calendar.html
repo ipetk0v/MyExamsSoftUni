@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+            integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+            crossorigin="anonymous"></script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            padding: 0.25em;
+            margin: 0;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        th, td {
+            width: 2.5em;
+        }
+        .today {
+            background-color: orange;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+</div>
+<script src="calendar.js"></script>
+<script>
+    window.onload = function(){
+        calendar([15,1,2017]);
+    }
+
+     function calendar([day,month,year]) {
+        let contentDiv = $('#content')
+ 
+        let table = $('<table></table>')
+        let caption = $('<caption></caption>')
+        let monthText = ''
+ 
+        switch (month){
+            case 1:monthText = 'January';break
+            case 2:monthText = 'February';break
+            case 3:monthText = 'March';break
+            case 4:monthText = 'April';break
+            case 5:monthText = 'May';break
+            case 6:monthText = 'June';break
+            case 7:monthText = 'July';break
+            case 8:monthText = 'August';break
+            case 9:monthText = 'September';break
+            case 10:monthText = 'October';break
+            case 11:monthText = 'November';break
+            case 12:monthText = 'December';break
+        }
+ 
+        caption.text(monthText+" "+year)
+        let body = $('<tbody></tbody>')
+ 
+        let tr1 = $('<tr></tr>')
+        let mon = $('<th>Mon</th>')
+        let tue = $('<th>Tue</th>')
+        let wed = $('<th>Wed</th>')
+        let thu = $('<th>Thu</th>')
+        let fri = $('<th>Fri</th>')
+        let sat = $('<th>Sat</th>')
+        let sun = $('<th>Sun</th>')
+ 
+        tr1.append(mon)
+        tr1.append(tue)
+        tr1.append(wed)
+        tr1.append(thu)
+        tr1.append(fri)
+        tr1.append(sat)
+        tr1.append(sun)
+        body.append(tr1)
+        table.append(caption)
+ 
+        let target = new Date(year,month-1,day).getDate()
+        let start = new Date(year,month-1,1).getDay()
+        let end = new Date(year, month , 0).getDate()
+        if (start == 0){
+            start = 7
+        }
+ 
+        let counter = 1
+        let tr2 = $('<tr></tr>')
+        for (let i = 1; i < 8; i++) {
+            let td = $('<td></td>')
+            if(i >= start){
+                td.text(counter++)
+            }
+            tr2.append(td)
+        }
+ 
+        let tr3 = $('<tr></tr>')
+        for (let i = 1; i < 8; i++) {
+            let td = $('<td></td>')
+            if(counter == target){
+                $(td).addClass('today')
+            }
+            td.text(counter++)
+            tr3.append(td)
+        }
+ 
+        let tr4 = $('<tr></tr>')
+        for (let i = 1; i < 8; i++) {
+            let td = $('<td></td>')
+            if(counter == target){
+                $(td).addClass('today')
+            }
+            td.text(counter++)
+            tr4.append(td)
+        }
+ 
+        let tr5 = $('<tr></tr>')
+        for (let i = 1; i < 8; i++) {
+            let td = $('<td></td>')
+            if(counter == target){
+                $(td).addClass('today')
+            }
+            td.text(counter++)
+            tr5.append(td)
+        }
+ 
+        let tr6
+        if(counter<=end) {
+            tr6 = $('<tr></tr>')
+            for (let i = 1; i < 8; i++) {
+                let td = $('<td></td>')
+                if(counter == target){
+                    $(td).addClass('today')
+                }
+                if (counter <= end) {
+                    td.text(counter++)
+                }
+                tr6.append(td)
+            }
+        }
+ 
+        let tr7
+        if(counter<=end) {
+            tr7 = $('<tr></tr>')
+            for (let i = 1; i < 8; i++) {
+                let td = $('<td></td>')
+                if(counter == target){
+                    $(td).addClass('today')
+                }
+                if (counter <= end) {
+                    td.text(counter++)
+                }
+                tr7.append(td)
+            }
+        }
+ 
+        body.append(tr2)
+        body.append(tr3)
+        body.append(tr4)
+        body.append(tr5)
+        if(counter<=end+1) {
+            body.append(tr6)
+        }
+        if(counter<=end+1) {
+            body.append(tr7)
+        }
+        table.append(body)
+        contentDiv.append(table)
+    }
+</script>
+</body>
+</html>
