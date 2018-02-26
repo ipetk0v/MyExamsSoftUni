@@ -11,7 +11,7 @@ function fibonacci() {
         let next = first + second
         first = second
         second = next
-        console.log(first)
+         return first
     }
 }
 
