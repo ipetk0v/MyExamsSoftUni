@@ -5,7 +5,6 @@
     let dot = (vec1, vec2) => vec1[0] * vec2[0] + vec1[1] * vec2[1];
     let cross = (vec1, vec2) => vec1[0] * vec2[1] - vec1[1] * vec2[0];
 
-    console.log(add([1, 1], [1, 0]))
     return {add, multiply, length, dot, cross};
 })();
 
