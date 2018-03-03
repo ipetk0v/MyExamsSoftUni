@@ -10,10 +10,21 @@
 // The factory function must take two string parameters. The toString() method of the returned object must return a string.
 // Submit the factory function.
 
-function makeCard(){
+function makeCard(cardFace, cardSuit){
+    const VALID_CARD = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']
+    const VALID_SUIT = {
+        'S': '\u2660',
+        'H': '\u2665',
+        'D': '\u2666',
+        'C': '\u2663'
+    }
+    if(VALID_CARD.indexOf(cardFace) < 0 || !VALID_SUIT.hasOwnProperty(cardSuit)){
+        throw new Error('Invalid input data')
+    }
 
+    return cardFace + VALID_SUIT[cardSuit]
 }
 
 console.log('' + makeCard('A', 'S'));
 console.log('' + makeCard('10', 'H'));
-console.log('' + makeCard('1', 'C'));
+// console.log('' + makeCard('1', 'C'));
