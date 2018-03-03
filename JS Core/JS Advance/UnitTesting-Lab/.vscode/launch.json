@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/test/4.Sum of Numbers.js"
+            "program": "${workspaceFolder}/test/7.Add Or Subtract.js"
         }
     ]
 }

@@ -34,9 +34,8 @@ describe('Test RGB to Hex Function', function(){
     })    
     it('Shoud be undefined [3.14,0,0]', function(){
         expect(rgbToHexColor(3.14,0,0)).to.be.equal(undefined)
-    })
-    
-    it('Shoud be undefined [0]', function(){
-        expect(rgbToHexColor(0)).to.be.equal(undefined)
+    })    
+    it('Shoud be undefined [0,0,-1]', function(){
+        expect(rgbToHexColor(0,0,-1)).to.be.equal(undefined)
     })
 })
