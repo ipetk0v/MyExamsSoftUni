@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    
+    <TextView
+        android:id="@+id/txt_title"
+        android:text="This is title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/img_article"
+        android:background="@color/colorAccent"
+        android:minHeight="200dp"
+        android:layout_width="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txt_body"
+        android:text="Primerno body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_like"
+        android:text="Like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
