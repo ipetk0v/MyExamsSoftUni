@@ -81,7 +81,6 @@ function sort(colIndex, descending) {
             
             if(!descending){
                 arr.sort(function (a,b) {
-                    console.log(a[colIndex])
                 if(Number.isInteger(a[colIndex])){
                     return Number(a[colIndex]) > Number(b[colIndex])
                 }
