@@ -43,7 +43,7 @@ class StringBuilder {
 let expect = require('chai').expect
 
 describe("SbTests", function() {
-    let sb
+    let sbс
     beforeEach(function(){
         sb = new StringBuilder()
     })

@@ -3,6 +3,7 @@ using CameraBazaar.Data.Models;
 using CameraBazaar.Services;
 using CameraBazaar.Web.Infrastructures.Extensions;
 using CameraBazaar.Web.Infrastructures.Filters;
+using Microsoft.AspNetCore.Authentication.Facebook;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -70,9 +71,7 @@ namespace CameraBazaar.Web
             }
 
             app.UseStaticFiles();
-
             app.UseAuthentication();
-
             app.UseMvcWithDefaultRoute();
         }
     }
