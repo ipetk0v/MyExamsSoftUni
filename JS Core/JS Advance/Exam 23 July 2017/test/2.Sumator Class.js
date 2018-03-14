@@ -22,11 +22,50 @@ class Sumator {
      return '(empty)';
      }
     }
+
     let expect = require('chai').expect
+
     describe("Test Sumator Class", function() {
-        beforeEach()
+        let sumator
+        beforeEach(function(){
+            sumator = new Sumator()
+        })
         it("checkAddFunction", function() {
-            
+            sumator.add(12)
+            expect(sumator.toString()).to.be.equal("12")
+        });  
+            it("checkToStringFunction", function() {
+            sumator.add(12)
+            let toString = sumator.toString()
+            expect(toString).to.be.equal("12")
+        });
+        it("checkSumNumsFunction", function() {
+            sumator.add(10)
+            sumator.add(10)
+            expect(sumator.sumNums()).to.be.equal(20)
+        });        
+
+        it("checkRemoveByFilterFunction", function() {
+            sumator.add(10)
+            sumator.add(9)
+            sumator.removeByFilter(x => x % 2 === 0)
+            expect(sumator.toString()).to.be.equal("9")
+        });
+        it("CreateClassSumator", function() {
+            let sumatores = new Sumator()
+            expect(sumatores.toString()).to.be.equal("(empty)")
+        });
+        it("CheckAddNumAndStringAndSum", function() {
+            sumator.add(10)
+            sumator.add("asd")
+            sumator.add(2)
+            expect(sumator.sumNums()).to.be.equal(12)
+        });
+
+        it("CheckAddNumAndStringAndPrint", function() {
+            sumator.add(10)
+            sumator.add("asd")
+            expect(sumator.toString()).to.be.equal("10, asd")
         });
     });
        
