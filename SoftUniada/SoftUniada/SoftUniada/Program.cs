@@ -6,7 +6,6 @@ namespace SoftUniada
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
         }
     }
 }
